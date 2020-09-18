@@ -20,13 +20,19 @@ class HistoryVC: UITableViewController {
         
         api.getData(base: nil, symbol: nil, date: nil, completion: {json in
             self.historyData=json
-            print("Пришло с сервера \(json.rates.count)")
             DispatchQueue.main.async {
                 guard let l=self.historyData else {return}
                 self.api.updateUI(label: self.dateLabel, date: l.date, tableView: self.tableView, currencies: l.rates)
             }
         })
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dateVC=segue.destination as? DateVC {
+            guard let data=historyData else {return}
+            dateVC.currencies = Array((data.rates.keys))
+        }
     }
     
 
@@ -40,7 +46,6 @@ class HistoryVC: UITableViewController {
         var dic=data.rates
         let base=data.base
         dic.removeValue(forKey: base)
-        print("Настройка числа ячеек \(dic.count)")
         return dic.count
     }
 

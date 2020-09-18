@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +16,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RXp-xU-aUv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j8I-Z5-qDL">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,7 +33,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eBC-B7-oab">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="12" width="33" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -54,7 +56,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Курсы валют" id="IYX-aX-m63">
-                        <barButtonItem key="rightBarButtonItem" title="Базовая валюта" id="6Mh-Km-jFj">
+                        <barButtonItem key="rightBarButtonItem" title="Выбор базовой валюты" id="6Mh-Km-jFj">
                             <connections>
                                 <segue destination="Wi8-Ks-eVj" kind="show" identifier="changeBase" id="FGq-h4-Ei9"/>
                             </connections>
@@ -76,17 +78,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9HI-IS-xdY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="446"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HI-IS-xdY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Wi8-Ks-eVj" id="uaA-ci-bil"/>
                                     <outlet property="delegate" destination="Wi8-Ks-eVj" id="78a-Cz-MFa"/>
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iCx-Te-bzS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9HI-IS-xdY" firstAttribute="trailing" secondItem="iCx-Te-bzS" secondAttribute="trailing" id="WaF-gd-DXA"/>
+                            <constraint firstItem="9HI-IS-xdY" firstAttribute="top" secondItem="iCx-Te-bzS" secondAttribute="top" id="bE8-tK-yGc"/>
+                            <constraint firstItem="9HI-IS-xdY" firstAttribute="leading" secondItem="iCx-Te-bzS" secondAttribute="leading" id="oPf-OS-xec"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jLg-mT-3Af">
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="Nm5-QN-zCU">
@@ -128,7 +134,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tpT-xo-5Co">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ntD-A9-3IC">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,7 +151,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A6a-Yz-was">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="12" width="33" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -168,7 +174,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Курсы на дату" id="Pw6-td-tsn">
-                        <barButtonItem key="rightBarButtonItem" title="Выбрать дату" id="mpQ-w4-jzd">
+                        <barButtonItem key="rightBarButtonItem" title="Выбор даты и валюты" id="mpQ-w4-jzd">
                             <connections>
                                 <segue destination="T1p-23-F6a" kind="show" id="JTT-HY-ryi"/>
                             </connections>
@@ -190,14 +196,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Qv1-tp-EKR">
-                                <rect key="frame" x="0.0" y="271" width="414" height="355"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Qv1-tp-EKR">
+                                <rect key="frame" x="0.0" y="127" width="414" height="216"/>
                                 <locale key="locale" localeIdentifier="ru"/>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбор даты" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zko-p9-Eix">
+                                <rect key="frame" x="0.0" y="98" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выбор базовой валюты" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVb-Z1-cIR">
+                                <rect key="frame" x="0.0" y="353" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFC-oh-edK">
+                                <rect key="frame" x="0.0" y="382" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="T1p-23-F6a" id="7Aw-Hh-geq"/>
+                                    <outlet property="delegate" destination="T1p-23-F6a" id="k95-ow-QFV"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="FHD-va-sqH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zko-p9-Eix" firstAttribute="top" secondItem="FHD-va-sqH" secondAttribute="top" constant="10" id="0sC-xF-b0G"/>
+                            <constraint firstItem="cFC-oh-edK" firstAttribute="trailing" secondItem="FHD-va-sqH" secondAttribute="trailing" id="9EL-g1-O1U"/>
+                            <constraint firstItem="Qv1-tp-EKR" firstAttribute="top" secondItem="zko-p9-Eix" secondAttribute="bottom" constant="8" symbolic="YES" id="CXh-29-tVk"/>
+                            <constraint firstItem="Qv1-tp-EKR" firstAttribute="trailing" secondItem="FHD-va-sqH" secondAttribute="trailing" id="FC3-Q7-acs"/>
+                            <constraint firstItem="SVb-Z1-cIR" firstAttribute="top" secondItem="Qv1-tp-EKR" secondAttribute="bottom" constant="10" id="WpO-tb-nb5"/>
+                            <constraint firstItem="SVb-Z1-cIR" firstAttribute="trailing" secondItem="FHD-va-sqH" secondAttribute="trailing" id="cK4-Oc-Yl9"/>
+                            <constraint firstItem="cFC-oh-edK" firstAttribute="leading" secondItem="FHD-va-sqH" secondAttribute="leading" id="eCC-Pc-Au9"/>
+                            <constraint firstItem="zko-p9-Eix" firstAttribute="leading" secondItem="FHD-va-sqH" secondAttribute="leading" id="hcj-X3-nHC"/>
+                            <constraint firstItem="SVb-Z1-cIR" firstAttribute="leading" secondItem="FHD-va-sqH" secondAttribute="leading" id="jKP-4i-4to"/>
+                            <constraint firstItem="SVb-Z1-cIR" firstAttribute="trailing" secondItem="FHD-va-sqH" secondAttribute="trailing" id="jvE-BU-CV0"/>
+                            <constraint firstItem="cFC-oh-edK" firstAttribute="top" secondItem="SVb-Z1-cIR" secondAttribute="bottom" constant="8" id="oYP-Yx-0Wa"/>
+                            <constraint firstItem="SVb-Z1-cIR" firstAttribute="leading" secondItem="FHD-va-sqH" secondAttribute="leading" id="p9J-31-gw6"/>
+                            <constraint firstItem="zko-p9-Eix" firstAttribute="trailing" secondItem="FHD-va-sqH" secondAttribute="trailing" id="rut-Yc-83T"/>
+                            <constraint firstItem="Qv1-tp-EKR" firstAttribute="leading" secondItem="FHD-va-sqH" secondAttribute="leading" id="zU2-oD-fOg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X1m-TR-dl8">
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="qOi-BM-zaw">
@@ -207,6 +247,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="curPicker" destination="cFC-oh-edK" id="eRH-wK-8vY"/>
                         <outlet property="datePicker" destination="Qv1-tp-EKR" id="xbI-6P-z1I"/>
                     </connections>
                 </viewController>
@@ -222,7 +263,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Leq-Wb-UhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tsb-ga-Em8">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -240,12 +281,75 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Избранное" id="ywi-eq-YAC">
-                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="vrB-Kn-mDi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="vrB-Kn-mDi">
+                            <connections>
+                                <segue destination="vvs-MU-WcO" kind="show" id="v6q-78-ocC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WS-xj-PGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2083" y="-964"/>
+        </scene>
+        <!--FavVC-->
+        <scene sceneID="iBe-zF-Fhm">
+            <objects>
+                <viewController id="vvs-MU-WcO" customClass="FavVC" customModule="CurrencyConverter_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k4M-Wk-trJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-7b-hti">
+                                <rect key="frame" x="0.0" y="88" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Gm9-NT-u01"/>
+                                </constraints>
+                            </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ztU-es-9xs">
+                                <rect key="frame" x="345" y="428" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="fL9-nR-o8F"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Задать сумму для базовой валюты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-TY-1VG">
+                                <rect key="frame" x="20" y="428" width="278" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="MlJ-Ys-ehj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2eH-gB-1QF">
+                                <rect key="frame" x="157" y="467" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="d1a-sG-nb2"/>
+                                    <constraint firstAttribute="height" constant="34" id="eE7-uD-YiP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="17E-JQ-yNl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1x-7b-hti" firstAttribute="top" secondItem="17E-JQ-yNl" secondAttribute="top" id="9q0-lS-5T2"/>
+                            <constraint firstItem="2eH-gB-1QF" firstAttribute="centerX" secondItem="k4M-Wk-trJ" secondAttribute="centerX" id="COl-Qo-HiR"/>
+                            <constraint firstItem="2eH-gB-1QF" firstAttribute="top" secondItem="sYv-TY-1VG" secondAttribute="bottom" constant="8" symbolic="YES" id="Fnd-wn-jBa"/>
+                            <constraint firstItem="17E-JQ-yNl" firstAttribute="trailing" secondItem="ztU-es-9xs" secondAttribute="trailing" constant="20" id="X5C-VQ-Nm9"/>
+                            <constraint firstItem="V1x-7b-hti" firstAttribute="leading" secondItem="17E-JQ-yNl" secondAttribute="leading" id="jd7-3k-FSB"/>
+                            <constraint firstItem="sYv-TY-1VG" firstAttribute="leading" secondItem="17E-JQ-yNl" secondAttribute="leading" constant="20" id="o4X-Hc-IZS"/>
+                            <constraint firstItem="sYv-TY-1VG" firstAttribute="top" secondItem="V1x-7b-hti" secondAttribute="bottom" constant="40" id="rnd-9W-d0N"/>
+                            <constraint firstItem="V1x-7b-hti" firstAttribute="trailing" secondItem="17E-JQ-yNl" secondAttribute="trailing" id="sRo-FH-Fbl"/>
+                            <constraint firstItem="ztU-es-9xs" firstAttribute="top" secondItem="sYv-TY-1VG" secondAttribute="top" id="y5J-mF-w5I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rVj-Gz-FS4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kzZ-e9-WBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3069.5652173913045" y="-964.28571428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -309,5 +413,8 @@
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

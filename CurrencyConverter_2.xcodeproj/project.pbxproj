@@ -20,6 +20,7 @@
 		05B5CE5424F2B58500093B43 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE5324F2B58500093B43 /* Networking.swift */; };
 		05B5CE5624F2B75500093B43 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE5524F2B75500093B43 /* JSONModel.swift */; };
 		05B5CE5A24F2CC5F00093B43 /* Common-Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 05B5CE5924F2CC5F00093B43 /* Common-Currency.json */; };
+		05DDD94C2515210C009559E7 /* FavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DDD94B2515210C009559E7 /* FavVC.swift */; };
 		05F64D4624F6801D008ABB2A /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F64D4524F6801D008ABB2A /* DateVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		05B5CE5324F2B58500093B43 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		05B5CE5524F2B75500093B43 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		05B5CE5924F2CC5F00093B43 /* Common-Currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Common-Currency.json"; path = "../../../../../Downloads/Currency/Common-Currency.json"; sourceTree = "<group>"; };
+		05DDD94B2515210C009559E7 /* FavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavVC.swift; sourceTree = "<group>"; };
 		05F64D4424F65357008ABB2A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		05F64D4524F6801D008ABB2A /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				05B5CE4F24F2A2AC00093B43 /* HistoryVC.swift */,
 				05F64D4524F6801D008ABB2A /* DateVC.swift */,
 				05B5CE1B24EFC38200093B43 /* Main.storyboard */,
+				05DDD94B2515210C009559E7 /* FavVC.swift */,
 				05B5CE1E24EFC38200093B43 /* Assets.xcassets */,
 				05B5CE2024EFC38200093B43 /* LaunchScreen.storyboard */,
 				05B5CE2324EFC38200093B43 /* Info.plist */,
@@ -175,6 +178,7 @@
 				05B5CE5624F2B75500093B43 /* JSONModel.swift in Sources */,
 				05B5CE4E24F2A28300093B43 /* MoreVC.swift in Sources */,
 				05B5CE5424F2B58500093B43 /* Networking.swift in Sources */,
+				05DDD94C2515210C009559E7 /* FavVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

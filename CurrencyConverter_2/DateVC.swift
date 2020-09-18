@@ -8,14 +8,18 @@
 
 import UIKit
 
-class DateVC: UIViewController {
-
+class DateVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var curPicker: UIPickerView!
     
+    var currencies:[String]=[]
+    var historyBase:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currencies.sort()
         
         let dateFormater=DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
@@ -25,7 +29,10 @@ class DateVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let historyVC=segue.destination as? HistoryVC else {return}
-        historyVC.api.getData(base: nil, symbol: nil, date: datePicker.date, completion: {json in
+        
+        let base=historyBase ?? currencies.first
+        
+        historyVC.api.getData(base: base, symbol: nil, date: datePicker.date, completion: {json in
             
             historyVC.historyData=json
             
@@ -35,4 +42,21 @@ class DateVC: UIViewController {
             
         })
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return currencies.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return currencies[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        historyBase=currencies[row]
+    }
+    
 }

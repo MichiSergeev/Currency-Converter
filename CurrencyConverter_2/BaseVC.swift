@@ -39,17 +39,17 @@ class BaseVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let mvc=segue.destination as? MoreVC {
-            if let base=newBase {
-                print(base)
-                mvc.api.getData(base: base, symbol: nil, date: nil, completion: {json in
-                    
-                    mvc.latestData=json
-                    
-                    DispatchQueue.main.async {
-                        mvc.api.updateUI(label: mvc.dateLabel, date: mvc.latestData?.date, tableView: mvc.tableView, currencies: mvc.latestData?.rates)
-                    }
-                })
-            }
+            
+            let base=newBase ?? currencies.first
+            
+            mvc.api.getData(base: base, symbol: nil, date: nil, completion: {json in
+                
+                mvc.latestData=json
+                
+                DispatchQueue.main.async {
+                    mvc.api.updateUI(label: mvc.dateLabel, date: mvc.latestData?.date, tableView: mvc.tableView, currencies: mvc.latestData?.rates)
+                }
+            })
         }
     }
 }
