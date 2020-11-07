@@ -13,7 +13,7 @@ struct RatesApi {
     
 //    var data: [String:Double] = [:]
 //    var date: Date?=Date()
-    var defaultBase: String? = "USD"
+    var defaultBase: String? = "RUB"
 //    var symbol: [String]?
 //    var latestExchangeRate: [String:Double]?
     

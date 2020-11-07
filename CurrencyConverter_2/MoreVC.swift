@@ -10,11 +10,18 @@ import UIKit
 
 class MoreVC: UITableViewController {
     
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var dateLabel: UILabel!
+    
+    // MARK: - Public property
     
     var latestData: Latest?
     var api = RatesApi()
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +34,7 @@ class MoreVC: UITableViewController {
         
     }
     
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -48,16 +55,21 @@ class MoreVC: UITableViewController {
         guard let data = latestData else {
             return cell
         }
+        
+        print(data)
+        
         var newData = data.rates
         newData.removeValue(forKey: data.base)
         let sortedData = newData.sorted(by: {$0.key < $1.key}).map({($0.key, $0.value)})
         let currency = sortedData.map({$0.0})
-        let value = sortedData.map({String(format: "%.02f", $0.1)})
+        let value = sortedData.map({String(format: "%.02f", 1 / $0.1)})
         cell.textLabel?.text = "1 " + data.base + " ="
         cell.detailTextLabel?.text = value[indexPath.row] + " " + currency[indexPath.row]
         return cell
     }
 
+    // MARK: - Public Methods
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let baseVC = segue.destination as? BaseVC {
             guard let data = latestData else {
@@ -67,9 +79,12 @@ class MoreVC: UITableViewController {
         }
     }
     
-
+    // MARK: - IBActions
     
     @IBAction func unwindMoreVC(unwindSegue: UIStoryboardSegue) {
     }
     
 }
+
+
+// MARK: - Extansion
