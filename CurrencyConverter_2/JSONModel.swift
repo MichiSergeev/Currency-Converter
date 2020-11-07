@@ -9,23 +9,23 @@
 import Foundation
 
 
-struct Latest:Decodable {
-    let base:String
-    let rates:[String:Double]
-    let date:String
+struct Latest: Decodable {
+    let base: String
+    let rates: [String : Double]
+    let date: String
 }
 
 
-struct Top:Decodable {
-    let currency : Currency
+struct Top: Decodable {
+    let currency: Currency
 }
 
-struct Currency:Decodable {
+struct Currency: Decodable {
 //    let symbol:String
 //    let name:String
 //    let symbol_native:String
 //    let decimal_digits:Int
 //    let rounding:Int
 //    let code:String
-    let name_plural:String
+    let name_plural: String
 }

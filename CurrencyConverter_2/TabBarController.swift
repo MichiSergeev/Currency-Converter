@@ -10,19 +10,19 @@ import UIKit
 
 class TabBarController: UITabBarController, URLSessionDelegate {
     
-    var x=0
-    var y=1
-    var z=2
+    var x = 0
+    var y = 1
+    var z = 2
     
-    var api=RatesApi()
+    var api = RatesApi()
     var latestExchangeRate:[String:Double] = [:]
-    var currentData=Date()
+    var currentData = Date()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let vcs=viewControllers {
+        if let vcs = viewControllers {
             for vc in vcs {
                 if let nc = vc as? UINavigationController {
                     nc.navigationBar.prefersLargeTitles = true

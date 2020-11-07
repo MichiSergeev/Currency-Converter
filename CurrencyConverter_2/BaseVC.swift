@@ -12,8 +12,8 @@ class BaseVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var currencies:[String]=[]
-    var newBase:String?
+    var currencies: [String]=[]
+    var newBase: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +34,17 @@ class BaseVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        newBase=currencies[row]
+        newBase = currencies[row]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let mvc=segue.destination as? MoreVC {
+        if let mvc = segue.destination as? MoreVC {
             
-            let base=newBase ?? currencies.first
+            let base = newBase ?? currencies.first
             
             mvc.api.getData(base: base, symbol: nil, date: nil, completion: {json in
                 
-                mvc.latestData=json
+                mvc.latestData = json
                 
                 DispatchQueue.main.async {
                     mvc.api.updateUI(label: mvc.dateLabel, date: mvc.latestData?.date, tableView: mvc.tableView, currencies: mvc.latestData?.rates)

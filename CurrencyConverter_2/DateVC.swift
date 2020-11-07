@@ -13,28 +13,28 @@ class DateVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var curPicker: UIPickerView!
     
-    var currencies:[String]=[]
-    var historyBase:String?
+    var currencies: [String] = []
+    var historyBase: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         currencies.sort()
         
-        let dateFormater=DateFormatter()
+        let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"
         datePicker.minimumDate = dateFormater.date(from: "01.01.1999")
         datePicker.maximumDate = Date()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let historyVC=segue.destination as? HistoryVC else {return}
+        guard let historyVC = segue.destination as? HistoryVC else {return}
         
-        let base=historyBase ?? currencies.first
+        let base = historyBase ?? currencies.first
         
         historyVC.api.getData(base: base, symbol: nil, date: datePicker.date, completion: {json in
             
-            historyVC.historyData=json
+            historyVC.historyData = json
             
             DispatchQueue.main.async {
                 historyVC.api.updateUI(label: historyVC.dateLabel, date: historyVC.historyData?.date, tableView: historyVC.tableView, currencies: historyVC.historyData?.rates)
@@ -56,7 +56,7 @@ class DateVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        historyBase=currencies[row]
+        historyBase = currencies[row]
     }
     
 }
