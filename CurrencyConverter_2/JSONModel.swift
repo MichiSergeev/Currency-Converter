@@ -29,3 +29,14 @@ struct Currency: Decodable {
 //    let code:String
     let name_plural: String
 }
+
+
+func prepareFileNameForFlag(code: String) -> String {
+    guard code.count > 2 else {
+        return code.lowercased()
+    }
+    let startIndex = code.startIndex
+    let endIndex = code.index(startIndex, offsetBy: 1)
+    let fileName = code[startIndex...endIndex].lowercased()
+    return fileName
+}

@@ -51,7 +51,7 @@ class MoreVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CurrencyCell
         guard let data = latestData else {
             return cell
         }
@@ -61,13 +61,25 @@ class MoreVC: UITableViewController {
         var newData = data.rates
         newData.removeValue(forKey: data.base)
         let sortedData = newData.sorted(by: {$0.key < $1.key}).map({($0.key, $0.value)})
-        let currency = sortedData.map({$0.0})
+        let codes = sortedData.map({$0.0})
         let value = sortedData.map({String(format: "%.02f", 1 / $0.1)})
-        cell.textLabel?.text = "1 " + data.base + " ="
-        cell.detailTextLabel?.text = value[indexPath.row] + " " + currency[indexPath.row]
+        
+        let fileName = prepareFileNameForFlag(code: codes[indexPath.row])
+        cell.currencyImage.image = UIImage(named: fileName)
+        cell.currencyLabel.text = "Название валюты"
+        cell.codeLabel.text = codes[indexPath.row]
+        cell.valueLabel.text = value[indexPath.row]
+        
+//        cell.textLabel?.text = "1 " + currency[indexPath.row] + " ="
+//        cell.detailTextLabel?.text = value[indexPath.row] + " " + data.base
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     // MARK: - Public Methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

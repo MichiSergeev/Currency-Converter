@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05A2B18D24F5319A00DC8D21 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2B18C24F5319A00DC8D21 /* BaseVC.swift */; };
+		05A7678E25569E1400EA5818 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A7678D25569E1300EA5818 /* Flags.xcassets */; };
+		05A767952556A9A300EA5818 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A767942556A9A300EA5818 /* CurrencyCell.swift */; };
 		05B5CE1424EFC38200093B43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE1324EFC38200093B43 /* AppDelegate.swift */; };
 		05B5CE1624EFC38200093B43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE1524EFC38200093B43 /* SceneDelegate.swift */; };
 		05B5CE1D24EFC38200093B43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B5CE1B24EFC38200093B43 /* Main.storyboard */; };
@@ -19,13 +21,15 @@
 		05B5CE5224F2A51F00093B43 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE5124F2A51F00093B43 /* TabBarController.swift */; };
 		05B5CE5424F2B58500093B43 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE5324F2B58500093B43 /* Networking.swift */; };
 		05B5CE5624F2B75500093B43 /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B5CE5524F2B75500093B43 /* JSONModel.swift */; };
-		05B5CE5A24F2CC5F00093B43 /* Common-Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 05B5CE5924F2CC5F00093B43 /* Common-Currency.json */; };
 		05DDD94C2515210C009559E7 /* FavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DDD94B2515210C009559E7 /* FavVC.swift */; };
 		05F64D4624F6801D008ABB2A /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F64D4524F6801D008ABB2A /* DateVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05A2B18C24F5319A00DC8D21 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		05A7678D25569E1300EA5818 /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
+		05A767912556A28300EA5818 /* Common-Currency.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Common-Currency.json"; sourceTree = "<group>"; };
+		05A767942556A9A300EA5818 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		05B5CE1024EFC38200093B43 /* CurrencyConverter_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B5CE1324EFC38200093B43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05B5CE1524EFC38200093B43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +43,6 @@
 		05B5CE5124F2A51F00093B43 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		05B5CE5324F2B58500093B43 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		05B5CE5524F2B75500093B43 /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
-		05B5CE5924F2CC5F00093B43 /* Common-Currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Common-Currency.json"; path = "../../../../../Downloads/Currency/Common-Currency.json"; sourceTree = "<group>"; };
 		05DDD94B2515210C009559E7 /* FavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavVC.swift; sourceTree = "<group>"; };
 		05F64D4424F65357008ABB2A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		05F64D4524F6801D008ABB2A /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
@@ -56,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A767902556A28300EA5818 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05A767912556A28300EA5818 /* Common-Currency.json */,
+				05A7678D25569E1300EA5818 /* Flags.xcassets */,
+				05B5CE1E24EFC38200093B43 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		05B5CE0724EFC38200093B43 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +90,6 @@
 			children = (
 				05B5CE1324EFC38200093B43 /* AppDelegate.swift */,
 				05B5CE1524EFC38200093B43 /* SceneDelegate.swift */,
-				05B5CE5924F2CC5F00093B43 /* Common-Currency.json */,
 				05B5CE5524F2B75500093B43 /* JSONModel.swift */,
 				05B5CE5324F2B58500093B43 /* Networking.swift */,
 				05B5CE5124F2A51F00093B43 /* TabBarController.swift */,
@@ -87,10 +99,11 @@
 				05B5CE4F24F2A2AC00093B43 /* HistoryVC.swift */,
 				05F64D4524F6801D008ABB2A /* DateVC.swift */,
 				05B5CE1B24EFC38200093B43 /* Main.storyboard */,
+				05A767942556A9A300EA5818 /* CurrencyCell.swift */,
 				05DDD94B2515210C009559E7 /* FavVC.swift */,
-				05B5CE1E24EFC38200093B43 /* Assets.xcassets */,
 				05B5CE2024EFC38200093B43 /* LaunchScreen.storyboard */,
 				05B5CE2324EFC38200093B43 /* Info.plist */,
+				05A767902556A28300EA5818 /* Supporting Files */,
 				05F64D4424F65357008ABB2A /* MyPlayground.playground */,
 			);
 			path = CurrencyConverter_2;
@@ -154,8 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A7678E25569E1400EA5818 /* Flags.xcassets in Resources */,
 				05B5CE2224EFC38200093B43 /* LaunchScreen.storyboard in Resources */,
-				05B5CE5A24F2CC5F00093B43 /* Common-Currency.json in Resources */,
 				05B5CE1F24EFC38200093B43 /* Assets.xcassets in Resources */,
 				05B5CE1D24EFC38200093B43 /* Main.storyboard in Resources */,
 			);
@@ -168,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A767952556A9A300EA5818 /* CurrencyCell.swift in Sources */,
 				05B5CE1424EFC38200093B43 /* AppDelegate.swift in Sources */,
 				05B5CE5024F2A2AC00093B43 /* HistoryVC.swift in Sources */,
 				05F64D4624F6801D008ABB2A /* DateVC.swift in Sources */,
