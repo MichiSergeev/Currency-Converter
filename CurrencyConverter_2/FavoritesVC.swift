@@ -14,11 +14,35 @@ class FavoritesVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        aboutCurrency()
+        
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = true
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+//    private func aboutCurrency() {
+//
+//        guard let url = Bundle.main.url(forResource: "Common-Currency", withExtension: "json"),
+//              let data = try? Data(contentsOf: url)
+//              else {
+//            return
+//        }
+//
+//        do {
+//            let json = try JSONDecoder().decode(([String:Currency]).self, from: data)
+//
+//            for element in json {
+//                print(element.key)
+//                print(element.value.name)
+//            }
+//
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         

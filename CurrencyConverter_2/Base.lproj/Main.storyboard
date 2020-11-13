@@ -33,16 +33,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqz-5u-QeE">
-                                            <rect key="frame" x="76" y="2" width="202" height="21"/>
+                                            <rect key="frame" x="76" y="2" width="70" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9x-oH-Xsi">
-                                            <rect key="frame" x="294" y="14.5" width="100" height="21"/>
+                                            <rect key="frame" x="162" y="14.5" width="232" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Jg9-8a-uQA"/>
-                                                <constraint firstAttribute="width" constant="100" id="nlj-GM-juL"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -56,7 +55,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aae-G0-Mu9">
-                                            <rect key="frame" x="76" y="26" width="202" height="21"/>
+                                            <rect key="frame" x="76" y="26" width="70" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -299,7 +298,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tsb-ga-Em8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="choice" id="tsb-ga-Em8">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tsb-ga-Em8" id="5Df-hG-ZiS">
@@ -369,6 +368,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V1x-7b-hti" firstAttribute="top" secondItem="17E-JQ-yNl" secondAttribute="top" id="9q0-lS-5T2"/>
+                            <constraint firstItem="17E-JQ-yNl" firstAttribute="trailing" secondItem="sYv-TY-1VG" secondAttribute="trailing" constant="116" id="BhL-w1-b6e"/>
                             <constraint firstItem="2eH-gB-1QF" firstAttribute="centerX" secondItem="k4M-Wk-trJ" secondAttribute="centerX" id="COl-Qo-HiR"/>
                             <constraint firstItem="2eH-gB-1QF" firstAttribute="top" secondItem="sYv-TY-1VG" secondAttribute="bottom" constant="8" symbolic="YES" id="Fnd-wn-jBa"/>
                             <constraint firstItem="17E-JQ-yNl" firstAttribute="trailing" secondItem="ztU-es-9xs" secondAttribute="trailing" constant="20" id="X5C-VQ-Nm9"/>

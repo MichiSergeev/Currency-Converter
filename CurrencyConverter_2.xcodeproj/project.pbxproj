@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		059B900A255E632B009D5C4C /* Common-Currency.json in Resources */ = {isa = PBXBuildFile; fileRef = 059B9009255E632B009D5C4C /* Common-Currency.json */; };
+		059B900E255ED9F1009D5C4C /* CommonCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B900D255ED9F1009D5C4C /* CommonCurrency.swift */; };
 		05A2B18D24F5319A00DC8D21 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A2B18C24F5319A00DC8D21 /* BaseVC.swift */; };
 		05A7678E25569E1400EA5818 /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A7678D25569E1300EA5818 /* Flags.xcassets */; };
 		05A767952556A9A300EA5818 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A767942556A9A300EA5818 /* CurrencyCell.swift */; };
@@ -26,9 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		059B9009255E632B009D5C4C /* Common-Currency.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Common-Currency.json"; sourceTree = "<group>"; };
+		059B900D255ED9F1009D5C4C /* CommonCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCurrency.swift; sourceTree = "<group>"; };
 		05A2B18C24F5319A00DC8D21 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		05A7678D25569E1300EA5818 /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
-		05A767912556A28300EA5818 /* Common-Currency.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Common-Currency.json"; sourceTree = "<group>"; };
 		05A767942556A9A300EA5818 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		05B5CE1024EFC38200093B43 /* CurrencyConverter_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B5CE1324EFC38200093B43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +65,7 @@
 		05A767902556A28300EA5818 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				05A767912556A28300EA5818 /* Common-Currency.json */,
+				059B9009255E632B009D5C4C /* Common-Currency.json */,
 				05A7678D25569E1300EA5818 /* Flags.xcassets */,
 				05B5CE1E24EFC38200093B43 /* Assets.xcassets */,
 			);
@@ -91,6 +94,7 @@
 				05B5CE1324EFC38200093B43 /* AppDelegate.swift */,
 				05B5CE1524EFC38200093B43 /* SceneDelegate.swift */,
 				05B5CE5524F2B75500093B43 /* JSONModel.swift */,
+				059B900D255ED9F1009D5C4C /* CommonCurrency.swift */,
 				05B5CE5324F2B58500093B43 /* Networking.swift */,
 				05B5CE5124F2A51F00093B43 /* TabBarController.swift */,
 				05B5CE4B24F2A25000093B43 /* FavoritesVC.swift */,
@@ -136,7 +140,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Mikhail Sergeev";
 				TargetAttributes = {
 					05B5CE0F24EFC38200093B43 = {
@@ -170,6 +174,7 @@
 				05A7678E25569E1400EA5818 /* Flags.xcassets in Resources */,
 				05B5CE2224EFC38200093B43 /* LaunchScreen.storyboard in Resources */,
 				05B5CE1F24EFC38200093B43 /* Assets.xcassets in Resources */,
+				059B900A255E632B009D5C4C /* Common-Currency.json in Resources */,
 				05B5CE1D24EFC38200093B43 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +189,7 @@
 				05A767952556A9A300EA5818 /* CurrencyCell.swift in Sources */,
 				05B5CE1424EFC38200093B43 /* AppDelegate.swift in Sources */,
 				05B5CE5024F2A2AC00093B43 /* HistoryVC.swift in Sources */,
+				059B900E255ED9F1009D5C4C /* CommonCurrency.swift in Sources */,
 				05F64D4624F6801D008ABB2A /* DateVC.swift in Sources */,
 				05B5CE1624EFC38200093B43 /* SceneDelegate.swift in Sources */,
 				05B5CE5224F2A51F00093B43 /* TabBarController.swift in Sources */,
@@ -244,6 +250,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -304,6 +311,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -8,35 +8,28 @@
 
 import Foundation
 
-
 struct Latest: Decodable {
     let base: String
-    let rates: [String : Double]
+    var rates: [String : Double]
     let date: String
 }
 
+//struct AboutCurrency: Decodable {
+//    let symbol: String
+//    let name: String
+//    let symbol_native: String
+//    let decimal_digits: Double
+//    let rounding: Double
+//    let code: String
+//    let name_plural: String
+//}
 
-struct Top: Decodable {
-    let currency: Currency
-}
-
-struct Currency: Decodable {
-//    let symbol:String
-//    let name:String
-//    let symbol_native:String
-//    let decimal_digits:Int
-//    let rounding:Int
-//    let code:String
-    let name_plural: String
-}
-
-
-func prepareFileNameForFlag(code: String) -> String {
-    guard code.count > 2 else {
-        return code.lowercased()
-    }
-    let startIndex = code.startIndex
-    let endIndex = code.index(startIndex, offsetBy: 1)
-    let fileName = code[startIndex...endIndex].lowercased()
-    return fileName
+struct AboutCurrency: Decodable {
+    let symbol: String
+    let name: String
+    let symbolNative: String
+    let decimalDigits: Double
+    let rounding: Double
+    let code: String
+    let namePlural: String
 }
